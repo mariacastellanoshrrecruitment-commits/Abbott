@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impactable 1000mg · María Paula Castellanos · Abbott</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:    #006BA6;
+  --blue2:   #0082C8;
+  --blue3:   #004E7C;
+  --bluelight: #E3F2FD;
+  --cream:   #F4F8FC;
+  --cream2:  #E3EFF8;
+  --cream3:  #F0F6FB;
+  --panel:   #FFFFFF;
+  --border:  rgba(0,107,166,0.14);
+  --text:    #0A1F2E;
+  --muted:   rgba(10,31,46,0.52);
+  --green:   #00875A;
+  --amber:   #B45309;
+  --red:     #CC0000;
+  --purple:  #5B21B6;
+  --teal:    #0891B2;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Syne',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+
+.hook{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px 60px;position:relative;background:var(--blue3);overflow:hidden;}
+.hook-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.hook-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(0,130,200,0.25) 0%,transparent 70%);pointer-events:none;}
+.hook-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:4px;color:rgba(255,255,255,0.45);text-transform:uppercase;margin-bottom:28px;animation:fadeUp 0.8s ease both;}
+.hook-hi{font-family:'Lora',serif;font-style:italic;font-size:clamp(16px,2vw,22px);color:rgba(255,255,255,0.7);margin-bottom:16px;animation:fadeUp 0.8s 0.1s ease both;}
+.hook-headline{font-size:clamp(38px,6.5vw,86px);font-weight:800;color:white;text-align:center;line-height:1.02;max-width:860px;margin-bottom:28px;animation:fadeUp 0.8s 0.2s ease both;}
+.hook-headline em{font-style:italic;font-family:'Lora',serif;color:#90CAF9;}
+.hook-sub{font-size:clamp(13px,1.6vw,17px);color:rgba(255,255,255,0.6);text-align:center;max-width:520px;line-height:1.75;margin-bottom:52px;font-family:'Lora',serif;font-style:italic;animation:fadeUp 0.8s 0.3s ease both;}
+.hook-scroll{display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeUp 0.8s 0.5s ease both;cursor:pointer;}
+.hook-scroll span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.38);text-transform:uppercase;}
+.hook-arrow{width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,0.45),transparent);animation:scrollPulse 2s infinite;}
+@keyframes scrollPulse{0%,100%{opacity:0.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.15)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px 60px;position:relative;background:var(--cream);overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(0,107,166,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,107,166,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,107,166,0.06) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;}
+
+.pill-wrap{position:relative;display:inline-block;margin-bottom:12px;animation:floatIn 1s ease both;}
+@keyframes floatIn{from{opacity:0;transform:translateY(40px) scale(0.88)}to{opacity:1;transform:translateY(0) scale(1)}}
+.pill-svg{display:block;cursor:pointer;filter:drop-shadow(0 8px 20px rgba(0,107,166,0.35)) drop-shadow(0 2px 40px rgba(0,130,200,0.2));transition:transform 0.45s cubic-bezier(0.34,1.56,0.64,1),filter 0.4s ease;}
+.pill-svg:hover{transform:translateY(-14px) rotate(-4deg) scale(1.07);filter:drop-shadow(0 24px 40px rgba(0,107,166,0.5)) drop-shadow(0 0 60px rgba(0,130,200,0.4));}
+.pill-badge{position:absolute;top:-14px;right:-14px;background:var(--green);color:#fff;font-size:9px;font-weight:700;letter-spacing:1.5px;padding:5px 12px;border-radius:100px;text-transform:uppercase;font-family:'DM Mono',monospace;box-shadow:0 4px 12px rgba(0,135,90,0.3);}
+.pill-hint{text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:14px;opacity:0.6;}
+
+.label-card{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:36px 44px;max-width:700px;width:100%;position:relative;overflow:hidden;animation:fadeUp 1s 0.3s ease both;box-shadow:0 4px 40px rgba(0,107,166,0.1);}
+.label-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue3),var(--blue),var(--teal),transparent);}
+.drug-name{font-size:clamp(30px,5vw,50px);font-weight:800;line-height:1;margin-bottom:8px;background:linear-gradient(90deg,var(--blue3) 0%,var(--blue) 60%,var(--teal) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.drug-generic{font-family:'DM Mono',monospace;font-size:11px;color:var(--blue);letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;}
+.div-line{height:1px;background:var(--border);margin:20px 0;}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;}
+.info-item label{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:5px;}
+.info-item span{font-size:13px;font-weight:600;color:var(--text);}
+.indication{background:rgba(0,107,166,0.05);border:1px solid rgba(0,107,166,0.15);border-radius:10px;padding:14px 18px;margin-bottom:18px;}
+.ind-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--blue);text-transform:uppercase;margin-bottom:7px;}
+.ind-text{font-size:13px;line-height:1.65;color:var(--muted);}
+.ingredients{display:flex;gap:7px;flex-wrap:wrap;}
+.ing{background:var(--cream2);border:1px solid var(--border);border-radius:100px;padding:5px 13px;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);transition:all 0.3s;cursor:default;}
+.ing:hover{background:rgba(0,107,166,0.08);border-color:rgba(0,107,166,0.3);color:var(--blue);}
+
+.dash-section{padding:80px 48px;background:var(--cream3);position:relative;}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;}
+.sec-title{font-size:clamp(26px,3vw,40px);font-weight:800;margin-bottom:44px;line-height:1.15;}
+.sec-title em{font-style:italic;font-family:'Lora',serif;}
+.inner{max-width:960px;margin:0 auto;}
+.bi-win{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,107,166,0.08);}
+.bi-bar{background:var(--cream2);border-bottom:1px solid var(--border);padding:11px 18px;display:flex;align-items:center;gap:14px;}
+.dots{display:flex;gap:5px;}
+.dot{width:10px;height:10px;border-radius:50%;}
+.bi-tab{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);padding:4px 11px;border-radius:4px;background:rgba(0,107,166,0.04);border:1px solid var(--border);}
+.bi-tab.on{color:var(--blue);background:rgba(0,107,166,0.08);border-color:rgba(0,107,166,0.25);}
+.bi-logo{margin-left:auto;font-family:'DM Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:1px;}
+.bi-body{padding:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+
+.kpi{background:var(--cream3);border:1px solid var(--border);border-radius:10px;padding:18px;position:relative;overflow:hidden;transition:all 0.3s;}
+.kpi:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,107,166,0.1);}
+.kpi::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;}
+.kpi.g::after{background:var(--green)}.kpi.b::after{background:var(--blue)}.kpi.a::after{background:var(--amber)}.kpi.r::after{background:var(--teal)}
+.kpi-lbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:9px;}
+.kpi-val{font-size:28px;font-weight:800;line-height:1;margin-bottom:5px;}
+.kpi.g .kpi-val{color:var(--green)}.kpi.b .kpi-val{color:var(--blue)}.kpi.a .kpi-val{color:var(--amber)}.kpi.r .kpi-val{color:var(--teal)}
+.kpi-sub{font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;}
+.kpi-sub.up{color:var(--green)}
+
+.tools-box{grid-column:span 4;background:var(--cream3);border:1px solid var(--border);border-radius:10px;padding:22px 24px;}
+.tools-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:16px;}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.tool-item{display:flex;align-items:flex-start;gap:10px;background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px;}
+.tool-icon{font-size:20px;flex-shrink:0;}
+.tool-text strong{display:block;font-size:12px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.tool-text span{font-size:11px;color:var(--muted);line-height:1.55;}
+
+.about-sec{padding:80px 48px;background:var(--panel);}
+.about-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.about-body p{font-size:14px;line-height:1.85;color:var(--muted);margin-bottom:14px;font-family:'Lora',serif;}
+.h-list{display:flex;flex-direction:column;gap:10px;}
+.h-item{display:flex;gap:13px;align-items:flex-start;padding:15px;background:var(--cream3);border:1px solid var(--border);border-radius:10px;transition:all 0.3s;}
+.h-item:hover{background:rgba(0,107,166,0.05);border-color:rgba(0,107,166,0.2);transform:translateX(4px);}
+.h-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.h-text strong{display:block;font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.h-text span{font-size:12px;color:var(--muted);line-height:1.5;}
+
+.skills-sec{padding:80px 48px;background:var(--cream);}
+.skills-inner{max-width:960px;margin:0 auto;}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.sk{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:22px;transition:all 0.3s;position:relative;overflow:hidden;}
+.sk::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--c,var(--blue));transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
+.sk:hover::before{transform:scaleX(1);}
+.sk:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,107,166,0.1);}
+.sk-icon{font-size:22px;margin-bottom:11px;}
+.sk-name{font-size:14px;font-weight:700;margin-bottom:6px;color:var(--text);}
+.sk-desc{font-size:12px;color:var(--muted);line-height:1.6;}
+
+.why-sec{padding:80px 48px;background:var(--cream3);}
+.why-inner{max-width:960px;margin:0 auto;}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.wc{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:26px;transition:all 0.3s;}
+.wc:hover{border-color:rgba(0,107,166,0.25);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,107,166,0.08);}
+.wc.feat{grid-column:span 2;background:linear-gradient(135deg,rgba(0,107,166,0.05),rgba(0,130,200,0.02));border-color:rgba(0,107,166,0.15);}
+.wc-emoji{font-size:26px;margin-bottom:11px;}
+.wc-title{font-size:15px;font-weight:700;margin-bottom:7px;color:var(--text);}
+.wc-text{font-size:13px;color:var(--muted);line-height:1.7;font-family:'Lora',serif;}
+
+.val-sec{padding:80px 48px;background:var(--blue3);position:relative;overflow:hidden;}
+.val-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(255,255,255,0.07) 0%,transparent 60%);pointer-events:none;}
+.val-inner{max-width:960px;margin:0 auto;position:relative;}
+.val-sec .eyebrow{color:rgba(255,255,255,0.5);}
+.val-sec .sec-title{color:white;}
+.val-sec .sec-title em{color:rgba(173,216,255,0.85);}
+.val-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.vc{display:flex;align-items:center;gap:13px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:11px;padding:16px 20px;transition:all 0.3s;}
+.vc:hover{background:rgba(255,255,255,0.18);transform:scale(1.02);}
+.vc-icon{font-size:20px;}
+.vc-name{font-size:13px;font-weight:700;color:white;margin-bottom:2px;}
+.vc-desc{font-size:11px;color:rgba(255,255,255,0.55);}
+
+.contact-sec{padding:80px 48px;background:var(--cream);text-align:center;}
+.contact-inner{max-width:580px;margin:0 auto;}
+.contact-sub{font-size:15px;color:var(--muted);margin:-20px 0 36px;font-family:'Lora',serif;font-style:italic;line-height:1.65;}
+.clinks{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.cbtn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;transition:all 0.3s;}
+.cbtn.p{background:var(--blue);color:white;}
+.cbtn.p:hover{background:var(--blue2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,107,166,0.35);}
+.cbtn.s{background:var(--panel);color:var(--text);border:1.5px solid var(--border);}
+.cbtn.s:hover{border-color:rgba(0,107,166,0.35);color:var(--blue);transform:translateY(-3px);}
+
+footer{background:var(--text);padding:22px 48px;display:flex;justify-content:space-between;align-items:center;}
+footer span{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;}
+.fr{color:#90CAF9!important;}
+
+@media(max-width:768px){
+  .info-grid{grid-template-columns:1fr 1fr;}
+  .bi-body{grid-template-columns:1fr 1fr;}
+  .tools-box{grid-column:span 1;}
+  .tools-grid,.about-inner,.skills-grid,.why-grid,.val-grid{grid-template-columns:1fr;}
+  .wc.feat{grid-column:span 1;}
+  .dash-section,.about-sec,.skills-sec,.why-sec,.val-sec,.contact-sec{padding:60px 24px;}
+  footer{flex-direction:column;gap:8px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<section class="hook">
+  <div class="hook-grid"></div>
+  <div class="hook-glow"></div>
+  <p class="hook-eyebrow">Para el equipo de Talent Acquisition · Abbott Colombia</p>
+  <p class="hook-hi">Hola 👋</p>
+  <h1 class="hook-headline">Tu próxima<br>Talent Acquisition<br><em>Specialist</em> está aquí.</h1>
+  <p class="hook-sub">Especialista en adquisición de talento con raíces en el sector farmacéutico y datos que lo demuestran. Scroll para ver la fórmula.</p>
+  <div class="hook-scroll" onclick="document.querySelector('.hero').scrollIntoView({behavior:'smooth'})">
+    <span>Ver la fórmula</span>
+    <div class="hook-arrow"></div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="pill-wrap">
+    <svg class="pill-svg" viewBox="0 0 320 130" width="320" height="130" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="pc"><rect x="0" y="0" width="320" height="130" rx="65" ry="65"/></clipPath>
+        <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#003F6B"/>
+          <stop offset="60%" stop-color="#006BA6"/>
+          <stop offset="100%" stop-color="#0082C8"/>
+        </linearGradient>
+        <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#BBDEFB"/>
+          <stop offset="50%" stop-color="#90CAF9"/>
+          <stop offset="100%" stop-color="#64B5F6"/>
+        </linearGradient>
+        <linearGradient id="shine" x1="0" y1="0" x2="0.6" y2="1">
+          <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+          <stop offset="50%" stop-color="white" stop-opacity="0.05"/>
+          <stop offset="100%" stop-color="white" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g clip-path="url(#pc)">
+        <rect x="0" y="0" width="160" height="130" fill="url(#lg)"/>
+        <rect x="160" y="0" width="160" height="130" fill="url(#rg)"/>
+        <rect x="157" y="0" width="6" height="130" fill="rgba(0,0,0,0.15)"/>
+        <rect x="0" y="0" width="320" height="130" fill="url(#shine)"/>
+        <ellipse cx="160" cy="5" rx="110" ry="10" fill="white" fill-opacity="0.15"/>
+      </g>
+      <rect x="1" y="1" width="318" height="128" rx="64" ry="64" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="1.5"/>
+      <text x="80" y="57" text-anchor="middle" font-family="monospace" font-size="13" fill="rgba(255,255,255,0.95)">Impactful</text>
+      <text x="80" y="77" text-anchor="middle" font-family="monospace" font-size="13" fill="rgba(255,255,255,0.95)">1000 mg</text>
+      <text x="240" y="57" text-anchor="middle" font-family="monospace" font-size="13" fill="rgba(0,50,100,0.9)">by MP</text>
+      <text x="240" y="77" text-anchor="middle" font-family="monospace" font-size="13" fill="rgba(0,50,100,0.9)">Castellanos</text>
+    </svg>
+    <div class="pill-badge">✓ LISTA</div>
+    <p class="pill-hint">↑ hover the pill</p>
+  </div>
+
+  <div class="label-card">
+    <div class="drug-name">Impactful™</div>
+    <div class="drug-generic">María Paula Castellanos · Talent Acquisition Specialist</div>
+    <div class="div-line"></div>
+    <div class="info-grid">
+      <div class="info-item"><label>Rol Objetivo</label><span>Talent Acquisition Specialist</span></div>
+      <div class="info-item"><label>Región</label><span>Colombia · LATAM · USA</span></div>
+      <div class="info-item"><label>Experiencia</label><span>3+ Años en TA</span></div>
+      <div class="info-item"><label>Industria</label><span>Farmacéutica · Tech</span></div>
+      <div class="info-item"><label>Background</label><span>Derecho · HHRR</span></div>
+      <div class="info-item"><label>Idiomas</label><span>Español · Inglés C1</span></div>
+    </div>
+    <div class="indication">
+      <div class="ind-label">⚕ Indicación</div>
+      <div class="ind-text">Indicada para equipos de Talent Acquisition que requieran gestión integral del ciclo de reclutamiento en operaciones internacionales, con expertise en perfiles comerciales y dominio de Workday. Efectiva en entornos de expansión acelerada con altos estándares de compliance y experiencia del candidato.</div>
+    </div>
+    <div class="ingredients">
+      <div class="ing">🎯 Sourcing Avanzado</div>
+      <div class="ing">⚙️ Workday</div>
+      <div class="ing">📊 Power BI</div>
+      <div class="ing">🔍 Boolean Search</div>
+      <div class="ing">🤝 Stakeholder Mgmt</div>
+      <div class="ing">⚖️ Derecho Laboral</div>
+      <div class="ing">💡 Employer Branding</div>
+      <div class="ing">🌎 Ops LATAM &amp; USA</div>
+      <div class="ing">🏥 Sector Farma</div>
+    </div>
+  </div>
+</section>
+
+<section class="dash-section">
+  <div class="inner">
+    <div class="eyebrow" style="color:var(--blue)">Métricas Reales · Power BI</div>
+    <h2 class="sec-title" style="color:var(--text)">Resultados con <em style="color:var(--blue)">datos reales</em></h2>
+    <div class="bi-win">
+      <div class="bi-bar">
+        <div class="dots">
+          <div class="dot" style="background:#ff5f57"></div>
+          <div class="dot" style="background:#ffbd2e"></div>
+          <div class="dot" style="background:#28ca41"></div>
+        </div>
+        <div class="bi-tab on">TA Overview</div>
+        <div class="bi-tab">Pipeline</div>
+        <div class="bi-tab">Candidate XP</div>
+        <div class="bi-logo">⚡ Power BI</div>
+      </div>
+      <div class="bi-body">
+        <div class="kpi g">
+          <div class="kpi-lbl">Tasa de aceptación de ofertas</div>
+          <div class="kpi-val">95%</div>
+          <div class="kpi-sub up">↑ promedio sostenido</div>
+        </div>
+        <div class="kpi b">
+          <div class="kpi-lbl">Reclutamientos Q1 2026</div>
+          <div class="kpi-val">38/mes</div>
+          <div class="kpi-sub up">↑ perfiles comerciales</div>
+        </div>
+        <div class="kpi a">
+          <div class="kpi-lbl">Satisfacción del candidato</div>
+          <div class="kpi-val">4.8/5</div>
+          <div class="kpi-sub up">↑ KPI implementado</div>
+        </div>
+        <div class="kpi r">
+          <div class="kpi-lbl">Expansión fuerza laboral</div>
+          <div class="kpi-val">85%</div>
+          <div class="kpi-sub">LATAM en 1 año</div>
+        </div>
+        <div class="tools-box">
+          <div class="tools-title">🛠️ Herramientas y metodologías en uso</div>
+          <div class="tools-grid">
+            <div class="tool-item">
+              <div class="tool-icon">🔍</div>
+              <div class="tool-text">
+                <strong>LinkedIn Recruiter + Boolean</strong>
+                <span>Estrategia de sourcing avanzado para identificar y atraer talento pasivo en mercados LATAM y USA de forma simultánea.</span>
+              </div>
+            </div>
+            <div class="tool-item">
+              <div class="tool-icon">⚙️</div>
+              <div class="tool-text">
+                <strong>Workday ATS</strong>
+                <span>Gestión del ciclo completo de selección, bases de datos globales actualizadas y seguimiento de KPIs de Talent Acquisition en tiempo real.</span>
+              </div>
+            </div>
+            <div class="tool-item">
+              <div class="tool-icon">📋</div>
+              <div class="tool-text">
+                <strong>Assessment Grupales &amp; Entrevistas</strong>
+                <span>Diseño y ejecución de assessment centers grupales, entrevistas por competencias y administración de ofertas salariales con alta tasa de cierre.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-sec">
+  <div class="about-inner">
+    <div>
+      <div class="eyebrow" style="color:var(--blue)">Sobre Mí</div>
+      <h2 class="sec-title" style="color:var(--text)">Abogada que encontró su <em style="color:var(--blue)">misión en el talento</em></h2>
+      <div class="about-body">
+        <p>Soy Abogada de la Universidad de La Sabana que realizó su práctica profesional en Sanofi gestionando contratos para la región COPAC. El sector farmacéutico ya me es familiar — y Abbott representa exactamente el tipo de impacto al que aspiro.</p>
+        <p>Durante años lideré programas de voluntariado infantil impactando a más de 220 niños, y co-creé una iniciativa de emprendimiento femenino donde co-autoré un libro. El impacto social no es un discurso — es quien soy.</p>
+        <p>Con más de 3 años liderando Talent Acquisition en entornos de hipercrecimiento, construí estrategias de reclutamiento desde cero: políticas, analytics, frameworks de selección y compliance en Colombia y USA simultáneamente.</p>
+      </div>
+    </div>
+    <div class="h-list">
+      <div class="h-item"><div class="h-icon">⚖️</div><div class="h-text"><strong>Formación Legal + HR</strong><span>LL.B. Universidad de La Sabana · Práctica en Sanofi · Compliance Colombia &amp; USA</span></div></div>
+      <div class="h-item"><div class="h-icon">📊</div><div class="h-text"><strong>Analytics desde Cero</strong><span>Power BI · KPI de satisfacción del candidato · Dashboards de reclutamiento en tiempo real</span></div></div>
+      <div class="h-item"><div class="h-icon">🌎</div><div class="h-text"><strong>Operaciones Multijurisdicción</strong><span>Ciclo completo de selección para regiones USA y LATAM de forma simultánea</span></div></div>
+      <div class="h-item"><div class="h-icon">❤️</div><div class="h-text"><strong>ADN de Impacto Social</strong><span>Directora voluntariado infantil · Co-fundadora emprendimiento femenino · Co-autora</span></div></div>
+      <div class="h-item"><div class="h-icon">🗣️</div><div class="h-text"><strong>Idiomas</strong><span>Español (nativo) · Inglés C1 · Francés A2</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="skills-sec">
+  <div class="skills-inner">
+    <div class="eyebrow" style="color:var(--purple)">Capacidades Core</div>
+    <h2 class="sec-title" style="color:var(--text)">Ingredientes <em style="color:var(--purple)">activos</em></h2>
+    <div class="skills-grid">
+      <div class="sk" style="--c:#00875A"><div class="sk-icon">🎯</div><div class="sk-name">Estrategia de Sourcing</div><div class="sk-desc">Boolean Search, LinkedIn Recruiter y CRM de talento para construir pipelines de candidatos calificados de forma continua.</div></div>
+      <div class="sk" style="--c:#006BA6"><div class="sk-icon">⚙️</div><div class="sk-name">Workday &amp; Tech Stack</div><div class="sk-desc">Dominio avanzado de Workday ATS, Power BI y herramientas digitales para gestionar el ciclo completo de selección.</div></div>
+      <div class="sk" style="--c:#B45309"><div class="sk-icon">⚡</div><div class="sk-name">Gestión de Stakeholders</div><div class="sk-desc">Consultoría y acompañamiento a líderes en EE.UU. y LATAM en estrategia de levantamiento de perfil y contratación.</div></div>
+      <div class="sk" style="--c:#0891B2"><div class="sk-icon">🤝</div><div class="sk-name">Experiencia del Candidato</div><div class="sk-desc">4.8/5.0 en satisfacción y 95% de tasa de aceptación de ofertas. La experiencia humana es mi prioridad en cada proceso.</div></div>
+      <div class="sk" style="--c:#5B21B6"><div class="sk-icon">📋</div><div class="sk-name">Compliance &amp; Políticas</div><div class="sk-desc">100% de manuales actualizados. Alineación con políticas internas y marcos regulatorios internacionales del sector.</div></div>
+      <div class="sk" style="--c:#006BA6"><div class="sk-icon">🌍</div><div class="sk-name">Employer Branding</div><div class="sk-desc">Programas de Marca Empleadora, plan carrera y plan de referidos para fortalecer el compromiso del talento a largo plazo.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="why-sec">
+  <div class="why-inner">
+    <div class="eyebrow" style="color:var(--blue)">Por qué Abbott</div>
+    <h2 class="sec-title" style="color:var(--text)">Lo que tenemos <em style="color:var(--blue)">en común</em></h2>
+    <div class="why-grid">
+      <div class="wc feat"><div class="wc-emoji">💊</div><div class="wc-title">El sector farmacéutico ya es mi hogar</div><div class="wc-text">Realicé mi práctica profesional en Sanofi gestionando más de 25 documentos legales y contratos comerciales mensuales para la región COPAC, logrando una calificación de 5.0/5.0. Entrar a Abbott no es un salto al vacío — es volver a un ecosistema que conozco y que respeto profundamente.</div></div>
+      <div class="wc"><div class="wc-emoji">🌍</div><div class="wc-title">Impacto a escala global</div><div class="wc-text">Contribuir al Talent Acquisition de una compañía con presencia mundial y el propósito de mejorar vidas es exactamente donde quiero crecer como profesional.</div></div>
+      <div class="wc"><div class="wc-emoji">🚀</div><div class="wc-title">Lista para el siguiente nivel</div><div class="wc-text">Ya gestiono reclutamiento simultáneo para Colombia y USA. Llevar esa capacidad a Abbott desde Colombia con visión internacional es la evolución natural de lo que ya hago.</div></div>
+      <div class="wc"><div class="wc-emoji">🔬</div><div class="wc-title">Estándares de excelencia</div><div class="wc-text">Abbott exige compliance y altos estándares — exactamente como los entornos regulatorios farmacéuticos que ya he navegado. La precisión es parte de mi ADN profesional.</div></div>
+      <div class="wc"><div class="wc-emoji">❤️</div><div class="wc-title">Las personas primero, siempre</div><div class="wc-text">Mi verdadera pasión es transformar vidas conectando las necesidades de la compañía con personas que hacen de su trayectoria su misión de vida. Eso es Abbott y eso soy yo.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="val-sec">
+  <div class="val-inner">
+    <div class="eyebrow">Valores Personales</div>
+    <h2 class="sec-title">Lo que impulsa <em>todo lo que hago</em></h2>
+    <div class="val-grid">
+      <div class="vc"><div class="vc-icon">🔒</div><div><div class="vc-name">Integridad</div><div class="vc-desc">Cada proceso gestionado con total confidencialidad y honestidad</div></div></div>
+      <div class="vc"><div class="vc-icon">💡</div><div><div class="vc-name">Curiosidad</div><div class="vc-desc">Pregunto el por qué antes de actuar — datos y contexto siempre primero</div></div></div>
+      <div class="vc"><div class="vc-icon">🌱</div><div><div class="vc-name">Mentalidad de crecimiento</div><div class="vc-desc">Construí procesos desde cero — me desarrollo donde hay que edificar</div></div></div>
+      <div class="vc"><div class="vc-icon">🤝</div><div><div class="vc-name">Conexión humana</div><div class="vc-desc">Detrás de cada proceso y cada métrica — hay una persona</div></div></div>
+      <div class="vc"><div class="vc-icon">⚡</div><div><div class="vc-name">Energía &amp; positividad</div><div class="vc-desc">Buena energía incluso en los procesos más complejos y exigentes</div></div></div>
+      <div class="vc"><div class="vc-icon">🎯</div><div><div class="vc-name">Orientada al impacto</div><div class="vc-desc">Mido el éxito por vidas transformadas — no por tareas completadas</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-sec">
+  <div class="contact-inner">
+    <div class="eyebrow" style="color:var(--blue)">Hablemos</div>
+    <h2 class="sec-title" style="color:var(--text)">Lista para construir algo <em style="color:var(--blue)">significativo</em> juntos</h2>
+    <p class="contact-sub">"Lista para contribuir desde el primer día — y genuinamente emocionada de crecer con Abbott."</p>
+    <div class="clinks">
+      <a href="https://www.linkedin.com/in/mariapcastellanos-hrliderazgo/" target="_blank" class="cbtn p">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:maria.castellanoshrrecruitment@gmail.com" class="cbtn s">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        Email
+      </a>
+      <a href="tel:+573004205757" class="cbtn s">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +57 300 420 5757
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 · MARÍA PAULA CASTELLANOS</span>
+  <span>Candidata · <span class="fr">Talent Acquisition Specialist · Abbott</span></span>
+</footer>
+
+</body>
+</html>
